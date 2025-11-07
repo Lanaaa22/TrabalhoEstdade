@@ -22,14 +22,14 @@ all: compile run
 # Explicit compile target (produces the target program)
 compile: $(TARGET)
 
-# Run the executable
+# Run the executable (COMANDO CORRIGIDO PARA LINUX)
 run: $(TARGET)
-  .\$(TARGET).exe
+	./$(TARGET)
 
 
-# Clean up
+# Clean up (COMANDO CORRIGIDO PARA LINUX)
 clean:
-  del /Q $(OBJS) $(TARGET).exe
+	rm -f $(OBJS) $(TARGET)
 
 
 # Compile source files into object files
