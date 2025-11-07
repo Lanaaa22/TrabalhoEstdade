@@ -42,12 +42,14 @@ Trabalho-Ilanna-Fernando
 
 #### Pré requisito:
 
+
 - Instalar o pacote que contém o compilador GCC e o Make, além de outras bibliotecas necessárias para o desenvolvimento para Ubuntu:
 
 ```bash
 sudo apt install build-essential
 ```
 
+##### Escrever os comandos após abrir o terminal na pasta do programa:
 #### Compilar com o `make`:
 
 ```bash
