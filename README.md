@@ -49,7 +49,7 @@ Trabalho-Ilanna-Fernando
 sudo apt install build-essential
 ```
 
-##### Escrever os comandos após abrir o terminal na `pasta` do programa:
+##### Escrever os comandos após abrir o terminal na pasta do programa:
 #### Compilar com o `make`:
 
 ```bash
