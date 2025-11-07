@@ -120,10 +120,10 @@ typedef struct bdtimes bdTimes; // Tipo bdTimes (banco de dados de times)
 
 | Função                     | Arquivo                  | Descrição                                               |
 |-----------------------------|-------------------------|---------------------------------------------------------|
-| `lobby()`                   | system.c                | Exibe o menu inicial com as opções principais.         |
-| `ConsultarTime()`           | consultar_time.c        | Busca e exibe informações sobre um time.               |
-| `ConsultarPartida()`        | consultar_partida.c     | Mostra os dados de uma partida específica.            |
-| `ImprimirClassificacao()`   | imprimir_classificacao.c| Exibe a tabela de classificação atualizada.           |
+| `lobby(bdTimes *bdt, bdPartidas *bdp)`                   | system.c                | Exibe o menu inicial com as opções principais.         |
+| `ConsultarTime(bdTimes *bdt, bdPartidas *bdp)`           | consultar_time.c        | Busca e exibe informações sobre um time.               |
+| `ConsultarPartida(bdTimes *bdt, bdPartidas *bdp)`        | consultar_partida.c     | Mostra os dados de uma partida específica.            |
+| `Classificacao(bdTimes *bdt, bdPartidas *bdp)`   | imprimir_classificacao.c| Exibe a tabela de classificação atualizada.           |
 | `LimpaTela()`               | auxiliares.c            | Limpa a tela do terminal, adaptável ao sistema operacional. |
 
 ## 🏹 Exemplo de Uso
