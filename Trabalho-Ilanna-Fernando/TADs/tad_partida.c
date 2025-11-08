@@ -5,14 +5,14 @@
 #include <stdlib.h>
 
 struct partida {
-    int id;          //Identificador da partida
-    int Time1id;     //ID do primeiro time
-    int Time2id;     //ID do segundo time
-    int GolsTime1;   //Gols marcados pelo primeiro time
-    int GolsTime2;   //Gols marcados pelo segundo time
+    int id;          // Identificador da partida
+    int Time1id;     // ID do primeiro time
+    int Time2id;     // ID do segundo time
+    int GolsTime1;   // Gols marcados pelo primeiro time
+    int GolsTime2;   // Gols marcados pelo segundo time
 };
 
-#define MAX_PARTIDAS 90 // 10 times, turno único: (10 * 9) / 2 = 45 jogos
+#define MAX_PARTIDAS 90 // 10 times, turno único: (10 * 9) / 2 = 45 jogos (Mas por um erro de criação do arquivo, ele possui 90 partidas)
 
 struct bdpartida {
     Partida *p[MAX_PARTIDAS];
@@ -41,6 +41,7 @@ void extraiArquivoPartidas(bdPartidas *bdp) {
     fclose(file);
 }
 
+// Insere a partida no bdPartidas
 void inserirBDPartidas(Partida *novaPartida, bdPartidas *bdp) {
     if (bdp->qtd >= MAX_PARTIDAS) {
         printf("Erro ao inserir mais partidas");
@@ -52,6 +53,7 @@ void inserirBDPartidas(Partida *novaPartida, bdPartidas *bdp) {
 
 }
 
+// Cria e aloca memória pra bdPartidas
 bdPartidas *createBDPartidas() {
     bdPartidas *bd = (bdPartidas *)malloc(sizeof(bdPartidas));
     if (bd == NULL) {
@@ -64,6 +66,7 @@ bdPartidas *createBDPartidas() {
     return bd;
 }
 
+// Imprime as informações bdPartidas
 void printBDPartidas(bdPartidas *bd) {
     for (int i = 0; i < bd->qtd; i++) {
         printf("Partida %d:\n", i + 1);
@@ -76,6 +79,7 @@ void printBDPartidas(bdPartidas *bd) {
 
 }
 
+// Libera memória ocupada por bdPartidas
 void liberaBDPartidas(bdPartidas *bd) {
     for(int i=0; i<bd->qtd; i++) {
         free(bd->p[i]);
@@ -83,27 +87,32 @@ void liberaBDPartidas(bdPartidas *bd) {
     free(bd);
 }
 
-// Getters para bdPartidas
+// Retorna a quantidade de partidas de bdPartidas
 int getQtdPartidas(bdPartidas *bdp) {
     return bdp->qtd;
 }
 
+// Retorna o ID do time Mandante
 int getTime1ID(bdPartidas *bdp, int i) {
     return bdp->p[i]->Time1id;
 }
 
+// Retorna o ID do time Visitante
 int getTime2ID(bdPartidas *bdp, int i) {
     return bdp->p[i]->Time2id;
 }
 
+// Retorna os Gols do time Mandante
 int getGolsTime1(bdPartidas *bdp, int i) {
     return bdp->p[i]->GolsTime1;
 }
 
+// Retorna os Gols do time Visitante
 int getGolsTime2(bdPartidas *bdp, int i) {
     return bdp->p[i]->GolsTime2;
 }
 
+// Retorna o ID da Partida de acordo com o índice
 int getPartidaID(bdPartidas *bdp, int i) {
     return bdp->p[i]->id;
 }

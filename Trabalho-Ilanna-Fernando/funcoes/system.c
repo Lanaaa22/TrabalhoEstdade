@@ -8,9 +8,11 @@
 #include <unistd.h>
 #include <locale.h>
 
+// Menu do programa (Interface)
 void lobby(bdTimes *bdt, bdPartidas *bdp) {  
     setlocale(LC_ALL, "");
     printf("Escolha 1 opcao:\n\n");
+    printf("---------------------\n\n");
     printf("1: Consultar Time\n");
     printf("2: Consultar Partidas\n");
     printf("3: Imprimir Tabela de Classificação\n");
@@ -21,21 +23,21 @@ void lobby(bdTimes *bdt, bdPartidas *bdp) {
     if (strcmp(option, "1") == 0) {
         LimpaTela();
         ConsultarTime(bdt, bdp);
-        sleep(3);
+        sleep(1.5);
         printf("---------------------\n\n");
         lobby(bdt,bdp);
     } 
     else if (strcmp(option, "2") == 0) {
         LimpaTela();
         ConsultarPartida(bdt, bdp);
-        sleep(3);
+        sleep(1.5);
         printf("---------------------\n\n");
         lobby(bdt, bdp);
     } 
     else if (strcmp(option, "3") == 0) {
         LimpaTela();
         Classificacao(bdt, bdp);
-        sleep(3);
+        sleep(1.5);
         printf("---------------------\n\n");
         lobby(bdt, bdp);
     }

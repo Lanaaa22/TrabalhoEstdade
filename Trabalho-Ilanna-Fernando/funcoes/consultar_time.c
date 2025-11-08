@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <locale.h>
 
+// Consulta o time de acordo com o prefixo digitado e imprime as informações do time (Nome,ID,V,E,D,GM,GS)
 void ConsultarTime(bdTimes *bdt, bdPartidas *bdp) {
     setlocale(LC_ALL, "");
     printf("Digite o nome do time ou prefixo: ");
@@ -39,6 +40,7 @@ void ConsultarTime(bdTimes *bdt, bdPartidas *bdp) {
     }
 } 
 
+// Retorna a quantidade de Vitórias do time
 int vitorias(int id, bdPartidas *bdp, bdTimes *bdt) {
     int cont = 0;
     
@@ -61,6 +63,7 @@ int vitorias(int id, bdPartidas *bdp, bdTimes *bdt) {
     return cont;
 }
 
+// Retorna a quantidade de Empates do time
 int empates(int id, bdPartidas *bdp, bdTimes *bdt) {
     int cont = 0;
     
@@ -83,6 +86,7 @@ int empates(int id, bdPartidas *bdp, bdTimes *bdt) {
     return cont;
 }
 
+// Retorna a quantidade de Derrotas do time
 int derrotas(int id, bdPartidas *bdp, bdTimes *bdt) {
     int cont = 0;
     
@@ -105,6 +109,7 @@ int derrotas(int id, bdPartidas *bdp, bdTimes *bdt) {
     return cont;
 }
 
+// Retorna a quantidade de Gols Marcados do time
 int golsMarcados(int id, bdPartidas *bdp, bdTimes *bdt) {
     int cont = 0;
     
@@ -127,6 +132,7 @@ int golsMarcados(int id, bdPartidas *bdp, bdTimes *bdt) {
     return cont;
 }
 
+// Retorna a quantidade de Gols Sofridos do time
 int golsSofridos(int id, bdPartidas *bdp, bdTimes *bdt) {
     int cont = 0;
     

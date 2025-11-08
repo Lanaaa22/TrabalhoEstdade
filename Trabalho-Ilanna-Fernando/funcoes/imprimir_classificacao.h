@@ -4,6 +4,7 @@
 #include "../TADs/tad_time.h"
 #include "../TADs/tad_partida.h"
 
+// Imprime a Classificação do Campeonato
 void Classificacao(bdTimes *bdt, bdPartidas *bdp);
 
 #endif

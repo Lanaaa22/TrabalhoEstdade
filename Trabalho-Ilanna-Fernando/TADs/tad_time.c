@@ -15,7 +15,7 @@ struct bdtimes {
     int qtd;
 };
 
-//Função que carrega arquivo time.csv
+// Função que carrega arquivo time.csv
 void extraiArquivoTimes(bdTimes *bdt) {
     FILE *file = fopen("arquivos/times.csv", "r");
     if (file == NULL)
@@ -37,13 +37,14 @@ void extraiArquivoTimes(bdTimes *bdt) {
     fclose(file);
 }
 
-//Função que insere um novo time (do arquivo times.csv) na struct bdtime
+// Função que insere um novo time (do arquivo times.csv) na struct bdtime
 void inserirBDtimes(Time *novoTime, bdTimes *bdt) {
     bdt->t[bdt->qtd] = novoTime;
     bdt->qtd++;
 }
 
-bdTimes *createBDTimes() //Cria e aloca memória para o estrutura BDTime
+// Cria e aloca memória para o estrutura BDTime
+bdTimes *createBDTimes() 
 {
    bdTimes *bd = (bdTimes *)malloc(sizeof(bdTimes)); 
     if (bd == NULL) {
@@ -58,6 +59,7 @@ bdTimes *createBDTimes() //Cria e aloca memória para o estrutura BDTime
    return bd; 
 }
 
+// Imprime bdTimes
 void printBDTimes(bdTimes *bd) {
     for (int i = 0; i < bd->qtd; i++) {
         printf("Time %d:\n", i + 1);
@@ -66,6 +68,7 @@ void printBDTimes(bdTimes *bd) {
     }
 }
 
+// Libera memória de BDTimes
 void liberaBDTimes(bdTimes *bd) {
     for(int i=0; i<bd->qtd; i++) {
         free(bd->t[i]);
@@ -73,16 +76,18 @@ void liberaBDTimes(bdTimes *bd) {
     free(bd);
 }
 
-// Getters para bdTimes
+// Retorna a quantidade de times
 int getQtdTimes(bdTimes *bdt) {
     return bdt->qtd;
 }
 
-int getIDTime(bdTimes *bdt, int i) {
+// Retorna o ID do time de acordo com o índice
+int getIDTime(bdTimes *bdt, int i) { 
     return bdt->t[i]->id;
 }
 
-char* getNomeTime(bdTimes *bdt, int i) {
+// Retorna o nome do time de acordo com o índice
+char* getNomeTime(bdTimes *bdt, int i) { 
     return bdt->t[i]->nome;
 }
 

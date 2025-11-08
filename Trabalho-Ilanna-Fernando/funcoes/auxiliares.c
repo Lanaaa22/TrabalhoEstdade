@@ -3,13 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int EprefixoTime(bdTimes *bdt, bdPartidas *bdp, char *busca, int i) {
-        if (strncmp(getNomeTime(bdt, i), busca, strlen(busca)) == 0) {
-            return 1;
-        }
-    return 0;
-}
-
+// Função para limpar tela para Windows, Linux ou MacOS
 void LimpaTela() {
     #ifdef _WIN32
         system("cls"); // Para Windows

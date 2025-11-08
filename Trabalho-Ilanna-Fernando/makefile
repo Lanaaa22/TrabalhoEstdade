@@ -5,6 +5,12 @@ CC = gcc
 CFLAGS = -Wall
 
 # Source files
+
+# Default target (compile and run)
+all: compile run
+
+# Explicit compile target (produces the target program)
+compile: $(TARGET)
 SRCS = main.c funcoes/system.c funcoes/auxiliares.c funcoes/consultar_time.c funcoes/consultar_partida.c funcoes/imprimir_classificacao.c TADs/tad_time.c TADs/tad_partida.c
 
 # Object files
@@ -15,12 +21,6 @@ TARGET = programa
 
 # Phony targets
 .PHONY: all compile run clean
-
-# Default target (compile and run)
-all: compile run
-
-# Explicit compile target (produces the target program)
-compile: $(TARGET)
 
 # Run the executable (COMANDO CORRIGIDO PARA LINUX)
 run: $(TARGET)

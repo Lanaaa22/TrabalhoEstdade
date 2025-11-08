@@ -23,7 +23,7 @@ void printBDTimes(bdTimes *bd);
 //Definição de função que libera bdtime
 void liberaBDTimes(bdTimes *bd);
 
-// Getters para acessar dados de bdTimes
+// Funções para acessar dados de bdTimes
 int getQtdTimes(bdTimes *bdt);
 int getIDTime(bdTimes *bdt, int i);
 char* getNomeTime(bdTimes *bdt, int i);

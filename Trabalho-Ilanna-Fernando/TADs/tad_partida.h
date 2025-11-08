@@ -7,17 +7,22 @@ typedef struct partida Partida;
 //Definição do dado bdPartida para representar uma informação de bdpartida
 typedef struct bdpartida bdPartidas;
 
+// Função que extrai dados do arquivo
 void extraiArquivoPartidas(bdPartidas *bd);
 
+// Função que insere nova partida em bdPartidas
 void inserirBDPartidas(Partida *novaPartida, bdPartidas *bdp);
 
+// Cria e aloca memória de bdPartida
 bdPartidas *createBDPartidas();
 
+// Imprime bdPartida
 void printBDPartidas(bdPartidas *bd);
 
+// Libera memória de bdPartida
 void liberaBDPartidas(bdPartidas *bd);
 
-// Getters para acessar dados de bdPartidas
+// Funções para acessar dados de bdPartidas
 int getQtdPartidas(bdPartidas *bdp);
 int getTime1ID(bdPartidas *bdp, int i);
 int getTime2ID(bdPartidas *bdp, int i);
